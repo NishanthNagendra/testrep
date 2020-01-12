@@ -140,5 +140,5 @@ public class Product implements Comparable<Product> {
 			return false;
 		return true;
 	}
-
+	
 }

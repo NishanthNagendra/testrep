@@ -1,6 +1,11 @@
 package com.rakuten.prj.util;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import com.rakuten.prj.entity.Triplet;
 
 /**
  * 
@@ -63,4 +68,33 @@ final class ArrayUtil {
 			}
 		}
 	}
+	
+	/**
+	 * 
+	 * @param data
+	 * @return
+	 */
+	public static List<Triplet> printTriplets(int[] data) {
+		List<Triplet> list = new ArrayList<>();
+		for (int i = 0; i < data.length; i++) {
+			for (int j = 0; j < data.length; j++) {
+				if (i != j && check(data[i] + data[j], data) && data[i] < data[j]) {
+					Triplet triplet = new Triplet(data[i], data[j], data[i] + data[j]);
+					list.add(triplet);
+				}
+			}
+		}
+		Collections.sort(list, (s1, s2) -> s1.getThird() - s2.getThird());
+		return list;
+	}
+
+	private static boolean check(int element, int[] data) {
+		for (int i = 0; i < data.length; i++) {
+			if (element == data[i])
+				return true;
+		}
+		return false;
+	}
+
+	
 }

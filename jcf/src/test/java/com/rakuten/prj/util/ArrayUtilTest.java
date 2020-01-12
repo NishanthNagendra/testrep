@@ -7,9 +7,12 @@ package com.rakuten.prj.util;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 import com.rakuten.prj.entity.Product;
+import com.rakuten.prj.entity.Triplet;
 
 /**
  * @author nishanth
@@ -65,5 +68,42 @@ class ArrayUtilTest {
         sps[1] = new Product(88, "HP Printer", 19000.00, "computer");
         
         assertArrayEquals(sps, products);
+	}
+	
+	@Test
+	void testPrintTriplets() {
+		int[] data = {2,3,4,5,7};
+		List<Triplet> triplets = ArrayUtil.printTriplets(data);
+        Triplet t = triplets.get(0);
+        
+        assertEquals(3, triplets.size());
+        assertEquals(2, t.getFirst());
+        assertEquals(3, t.getSecond());
+        assertEquals(5, t.getThird());
+       
+        t = triplets.get(2);
+        assertEquals(3, triplets.size());
+        assertEquals(3, t.getFirst());
+        assertEquals(4, t.getSecond());
+        assertEquals(7, t.getThird());
+		
+        System.out.println(ArrayUtil.printTriplets(data));
+        
+        int[] data1 = {1,2,3,4,5,7,9};
+		List<Triplet> triplets1 = ArrayUtil.printTriplets(data1);
+        Triplet t1 = triplets1.get(0);
+        
+        assertEquals(8, triplets1.size());
+        assertEquals(1, t1.getFirst());
+        assertEquals(2, t1.getSecond());
+        assertEquals(3, t1.getThird());
+       
+        t1 = triplets1.get(7);
+        assertEquals(8, triplets1.size());
+        assertEquals(4, t1.getFirst());
+        assertEquals(5, t1.getSecond());
+        assertEquals(9, t1.getThird());
+		
+        System.out.println(ArrayUtil.printTriplets(data1));
 	}
 }
