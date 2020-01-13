@@ -9,7 +9,6 @@ public class MapExample {
 		String str = "Java is OOP, Java is open source";
 		str = str.replaceAll("[-+.^:,]","");
 		String[] splitString = str.split(" ");
-		int temp;
 		Map<String, Integer> index = new HashMap<>();
 		for (int i = 0; i < splitString.length; i++) {
 			if (index.containsKey(splitString[i])) 
