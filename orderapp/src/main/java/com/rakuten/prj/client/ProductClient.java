@@ -6,6 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.rakuten.prj.cfg.AppConfig;
 import com.rakuten.prj.dao.CustomerDaoJpaImpl;
+import com.rakuten.prj.dao.OrderDaoJpaImpl;
 import com.rakuten.prj.dao.ProductDaoJpaImpl;
 import com.rakuten.prj.entity.Product;
 import com.rakuten.prj.service.OrderService;
@@ -18,6 +19,7 @@ public class ProductClient {
 		ctx.register(OrderService.class);	// object will be orderService
 		ctx.register(ProductDaoJpaImpl.class);	
 		ctx.register(CustomerDaoJpaImpl.class);	// object will be productDaoJpaImpl
+		ctx.register(OrderDaoJpaImpl.class);
 		ctx.register(AppConfig.class);	// object will be appConfig
 		// register all classes required for spring
 		ctx.refresh();

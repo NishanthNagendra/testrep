@@ -35,8 +35,27 @@ public class Product implements Comparable<Product> {
 	 * category of the product.
 	 */
 	private String category;
+	/**
+	 * 
+	 */
+	private int qty;
 
 	
+
+	/**
+	 * @param id
+	 * @param name
+	 * @param price
+	 * @param category
+	 * @param qty
+	 */
+	public Product(int id, String name, double price, String category, int qty) {
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.category = category;
+		this.qty = qty;
+	}
 
 	/**
 	 * 
@@ -45,17 +64,17 @@ public class Product implements Comparable<Product> {
 	}
 
 	/**
-	 * 
-	 * @param id       of the product
-	 * @param name     of the product
-	 * @param price    of the product
-	 * @param category of the product
+	 * @return the qty
 	 */
-	public Product(int id, String name, double price, String category) {
-		this.id = id;
-		this.name = name;
-		this.price = price;
-		this.category = category;
+	public int getQty() {
+		return qty;
+	}
+
+	/**
+	 * @param qty the qty to set
+	 */
+	public void setQty(int qty) {
+		this.qty = qty;
 	}
 
 	/**

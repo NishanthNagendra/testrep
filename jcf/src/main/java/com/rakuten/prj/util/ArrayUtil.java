@@ -87,7 +87,12 @@ final class ArrayUtil {
 		Collections.sort(list, (s1, s2) -> s1.getThird() - s2.getThird());
 		return list;
 	}
-
+	/**
+	 * 
+	 * @param element
+	 * @param data
+	 * @return
+	 */
 	private static boolean check(int element, int[] data) {
 		for (int i = 0; i < data.length; i++) {
 			if (element == data[i])

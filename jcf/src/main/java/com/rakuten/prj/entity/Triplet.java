@@ -8,8 +8,17 @@ package com.rakuten.prj.entity;
  *
  */
 public class Triplet {
+	/**
+	 * 
+	 */
 	private int first;
+	/**
+	 * 
+	 */
 	private int second;
+	/**
+	 * 
+	 */
 	private int third;
 	/**
 	 * @param first
