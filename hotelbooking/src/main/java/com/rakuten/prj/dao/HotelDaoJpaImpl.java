@@ -48,6 +48,7 @@ public class HotelDaoJpaImpl implements HotelDao {
 				+ "country like concat('%', :searchKey, '%')";
 		TypedQuery<Hotel> query = em.createQuery(jpql, Hotel.class);
 		query.setParameter("searchKey", searchKey);
+//		query.setParameter("searchKey", "%" + searchKey + "%");
 		return query.getResultList();
 	}
 
