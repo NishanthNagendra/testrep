@@ -1,13 +1,10 @@
 package com.rakuten;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.rakuten.prj.entity.Donation;
 import com.rakuten.prj.service.CampaignService;
 
 /**
@@ -17,6 +14,9 @@ import com.rakuten.prj.service.CampaignService;
  */
 @SpringBootApplication
 public class FundraiserApplication implements CommandLineRunner {
+	/**
+	 * 
+	 */
 	@Autowired
 	private CampaignService campaignService;
 	/**

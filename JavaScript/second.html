@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Book(price, title) {
+            this.price = price;
+            this.title = title;
+        }
+        // class owned instance methods
+        Book.prototype.getPrice = function() {
+            return this.price;
+        }
+        Book.prototype.getTitle = function() {
+            return this.title;
+        }
+
+        // class owned class method [ static ]
+        Book.comparable = function(b1, b2) {
+            return b1.price - b2.price;
+        }
+
+        var books = [
+            new Book(34, "First"),
+            new Book(22, "Second"),
+            new Book(1, "Third"),
+            new Book(85, "Fourth")
+        ];
+
+        books.sort(Book.comparable);
+
+        for (var i = 0; i < books.length; i++) {
+            console.log(books[i].getTitle(), books[i].getPrice());
+        }
+
+    </script>
+</body>
+</html>

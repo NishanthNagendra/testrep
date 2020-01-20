@@ -26,19 +26,33 @@ import com.rakuten.prj.service.CampaignService;
 @RestController
 @RequestMapping("donations")
 public class DonationRestController {
+	/**
+	 * 
+	 */
 	@Autowired
 	private CampaignService service;
 
+	/**
+	 * @return
+	 */
 	@GetMapping()
 	public @ResponseBody List<Donation> getDonations() {
 			return service.getDonations();
 	}
 
+	/**
+	 * @param id
+	 * @return
+	 */
 	@GetMapping("/{id}")
 	public @ResponseBody Donation getDonationById(@PathVariable("id") int id) {
 		return service.getDonation(id);
 	}
 
+	/**
+	 * @param d
+	 * @return
+	 */
 	@PostMapping()
 	public ResponseEntity<Donation> addDonation(@RequestBody Donation d) {
 		service.addDonations(d);

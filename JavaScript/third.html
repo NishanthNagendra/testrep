@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <table id="tbl">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+      </tr>
+      <tr>
+        <td>100</td>
+        <td>Head First Java</td>
+      </tr>
+    </table>
+
+    <form>
+      Id <input type="text" id="id" /> <br />
+      Name <input type="text" id="name" /> <br />
+      <button type="button" id="btn">Add Book</button>
+    </form>
+
+    <script>
+      document.getElementById("btn").addEventListener("click", function() {
+        var id = document.getElementById("id").value;
+        var name = document.getElementById("name").value;
+        alert(id + ", " + name);
+
+        var tbl = document.getElementById("tbl");
+        var tr = document.createElement("tr");
+        var td = document.createElement("td");
+        td.innerHTML = id;
+        tr.append(td);
+        td = document.createElement("td");
+        td.innerHTML = name;
+        tr.append(td);
+        tbl.append(tr);
+      });
+    </script>
+  </body>
+</html>

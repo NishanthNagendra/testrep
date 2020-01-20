@@ -14,5 +14,9 @@ import com.rakuten.prj.entity.Campaign;
  *
  */
 public interface CampaignDao extends JpaRepository<Campaign, Integer> {
+	/**
+	 * @param status
+	 * @return
+	 */
 	List<Campaign> findByStatus(String status);
 }

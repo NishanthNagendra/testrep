@@ -27,9 +27,16 @@ import com.rakuten.prj.service.CampaignService;
 @RestController
 @RequestMapping("campaigns")
 public class CampaignRestController {
+	/**
+	 * 
+	 */
 	@Autowired
 	private CampaignService service;
 
+	/**
+	 * @param status
+	 * @return
+	 */
 	@GetMapping()
 	public @ResponseBody List<Campaign> getCampaigns(@RequestParam(name = "status", required = false) String status) {
 		if (status == null)
@@ -38,11 +45,19 @@ public class CampaignRestController {
 			return service.getActiveCampaigns(status);
 	}
 
+	/**
+	 * @param id
+	 * @return
+	 */
 	@GetMapping("/{id}")
 	public @ResponseBody Campaign getCampaignById(@PathVariable("id") int id) {
 		return service.getCampaign(id);
 	}
 
+	/**
+	 * @param c
+	 * @return
+	 */
 	@PostMapping()
 	public ResponseEntity<Campaign> addCompaign(@RequestBody Campaign c) {
 		service.addCampaign(c);

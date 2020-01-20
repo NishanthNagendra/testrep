@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var emp = {
+            "id": 120,
+            "name": "Tim",
+            "getDetails": function() {
+                return this.id + "," + this.name;
+            }
+        };
+        console.log(emp.getDetails());
+
+        var p = {"id": 56, "name": "OnePlus"}
+        var f = emp.getDetails;
+
+        console.log(f.call(emp))
+        console.log(f.call(p))
+    </script>
+</body>
+</html>
+
+<!-- 
+TRY BELOW LINES IN CHROME CONSOLE
+String.prototype.makeItGreen = function() { return "<font color = 'green' >" + this + "</font" }
+document.write("Peter".makeItGreen()) -->

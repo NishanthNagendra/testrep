@@ -60,7 +60,7 @@ public class ProductRestControllerTest {
 				.andExpect(jsonPath("$[1].id", is(2))).andExpect(jsonPath("$[1].name", is("b")));
 		// @formatter:on
 		verify(service, times(1)).getProducts(); // verify the service is called one time
-		//verifyNoMoreInteractions(service);
+//		verifyNoMoreInteractions(service);
 
 	}
 
@@ -74,7 +74,9 @@ public class ProductRestControllerTest {
 		// exception
 		doNothing().when(service).addProduct(Mockito.any(Product.class));
 		// @formatter:off
-		mockMvc.perform(post("/products").content(json).contentType(MediaType.APPLICATION_JSON))
+		mockMvc.perform(post("/products")
+				.content(json)
+				.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isCreated());
 		// @formatter:on
 		verify(service, times(1)).addProduct(Mockito.any(Product.class));
