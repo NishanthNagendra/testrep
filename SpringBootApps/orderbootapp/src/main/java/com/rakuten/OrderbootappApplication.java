@@ -25,20 +25,20 @@ public class OrderbootappApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		List<Product> list = os.getByRange(20000, 1000000);
-		for (Product p : list) {
-			System.out.println(p);
-		}
-		System.out.println("\n\n\n");
-		List<Customer> list1 = os.getCustomers();
-		for (Customer customer : list1) {
-			System.out.println(customer);
-		}
-		System.out.println("\n\n\n");
-		List<Order> list2 = os.viewOrders();
-		for (Order order : list2) {
-			System.out.println(order);
-		}
+//		List<Product> list = os.getByRange(20000, 1000000);
+//		for (Product p : list) {
+//			System.out.println(p);
+//		}
+//		System.out.println("\n\n\n");
+//		List<Customer> list1 = os.getCustomers();
+//		for (Customer customer : list1) {
+//			System.out.println(customer);
+//		}
+//		System.out.println("\n\n\n");
+//		List<Order> list2 = os.viewOrders();
+//		for (Order order : list2) {
+//			System.out.println(order);
+//		}
 //		System.out.println("\n\n\n");
 //		int[] pids = {3, 5, 6};
 //		int[] qts = {4, 2, 1};
