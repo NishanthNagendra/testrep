@@ -26,7 +26,8 @@ import com.rakuten.prj.service.PhoneService;
  */
 @RestController
 @RequestMapping("phones")
-@CrossOrigin(origins = "http://localhost:3001")
+// CORS can be removed after npm run build ad pasting contents to static in resuources
+//@CrossOrigin(origins = "http://localhost:3000")
 public class PhoneRestController {
 	@Autowired
 	private PhoneService service;
